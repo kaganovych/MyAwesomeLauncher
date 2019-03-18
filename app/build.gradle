@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.myawesomelauncher"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraryDependencies.kotlinStdlibJdk8
+    implementation libraryDependencies.androidxCore
+    implementation libraryDependencies.appcompat
+    implementation libraryDependencies.recyclerview
+    implementation libraryDependencies.annotations
+    implementation libraryDependencies.ktx
+    implementation libraryDependencies.constraintLayout
+    implementation libraryDependencies.material
+    implementation libraryDependencies.dagger
+    implementation libraryDependencies.daggerAndroid
+    implementation libraryDependencies.rxJava
+    implementation libraryDependencies.rxAndroid
+    kapt libraryDependencies.daggerCompiler
+    testImplementation testDependencies.jUnit
+}

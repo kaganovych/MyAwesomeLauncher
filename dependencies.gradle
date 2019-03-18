@@ -1,0 +1,89 @@
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+// Define versions in a single place
+ext {
+  //Android
+  androidBuildToolsVersion = '28.0.3'
+  androidMinSdkVersion = 19
+  androidTargetSdkVersion = 28
+  androidCompileSdkVersion = 28
+  renderscriptTargetApiVersion = 28
+
+  //Google
+  androidXVersion = '1.0.0'
+  exifinterfaceVersion = '1.0.0'
+  materialVersion = '1.0.0'
+  androidSupportVersion = '1.0.0'
+  lifecycleJava8Version = '2.0.0'
+  constraintVersion = '1.1.2'
+
+  //Dagger
+  daggerVersion = '2.13'
+
+  //Epoxy
+  epoxyVersion = '3.1.0'
+
+  //rx
+  rxJavaVersion = '2.2.2'
+  rxAndroidVersion = '2.1.0'
+
+  //Kotlin
+  kotlinVersion = '1.3.11'
+
+  //Timber
+  timberVersion = '4.6.1'
+
+
+  //Testing
+  jUnitVersion = '4.12'
+
+  //Glide
+  glideVersion = '4.8.0'
+  glideKapt = '4.8.0'
+  glideOkhttpVersion = '4.8.0'
+  glideTransformations = '3.3.0'
+
+  //ktx
+  ktxVersion = '1.0.1'
+
+  // Library dependencies
+  libraryDependencies =
+      [androidxCore             : "androidx.core:core:${androidXVersion}",
+       recyclerview             : "androidx.recyclerview:recyclerview:${androidXVersion}",
+       viewpager                : "androidx.viewpager:viewpager:${androidXVersion}",
+       material                 : "com.google.android.material:material:${materialVersion}",
+       cardview                 : "androidx.cardview:cardview:${androidXVersion}",
+       appcompat                : "androidx.appcompat:appcompat:${androidXVersion}",
+       annotations              : "androidx.annotation:annotation:${androidXVersion}",
+       transition               : "androidx.transition:transition:${androidXVersion}",
+       constraintLayout         : "androidx.constraintlayout:constraintlayout:${constraintVersion}",
+       design                   : "com.android.support:design:${androidSupportVersion}",
+       lifecycleJava8           : "androidx.lifecycle:lifecycle-common-java8:${lifecycleJava8Version}",
+       lifecycleExtensions      : "androidx.lifecycle:lifecycle-extensions:${lifecycleJava8Version}",
+       rxJava                   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+       rxAndroid                : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+
+       kotlinStdlibJdk8         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+
+       dagger                   : "com.google.dagger:dagger:${daggerVersion}",
+       daggerCompiler           : "com.google.dagger:dagger-compiler:${daggerVersion}",
+       daggerAndroid            : "com.google.dagger:dagger-android:${daggerVersion}",
+
+       //glide
+       glide                    : "com.github.bumptech.glide:glide:${glideVersion}",
+       glideOkhttp              : "com.github.bumptech.glide:okhttp3-integration:${glideOkhttpVersion}",
+       glideKapt                : "com.github.bumptech.glide:compiler:${glideKapt}",
+
+       timber                   : "com.jakewharton.timber:timber:${timberVersion}",
+       epoxy                    : "com.airbnb.android:epoxy:${epoxyVersion}",
+       epoxyProcessor           : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
+       ktx                      : "androidx.core:core-ktx:${ktxVersion}"]
+
+
+  // Testing dependencies
+  testDependencies = [jUnit            : "junit:junit:${jUnitVersion}"]
+}

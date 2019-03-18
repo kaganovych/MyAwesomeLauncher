@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:id="@+id/mainRoot"
+        android:layout_height="match_parent">
+  <androidx.constraintlayout.widget.ConstraintLayout
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainTvDelete"
+            android:drawableStart="@drawable/ic_delete"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Delete"
+            android:gravity="center"
+            android:drawablePadding="@dimen/app_icon_drawable_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintEnd_toStartOf="@+id/mainTvInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mainTvDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/mainTvInfo"
+            android:text="Info"
+            android:gravity="center"
+            android:drawablePadding="@dimen/app_icon_drawable_padding"
+            android:drawableStart="@drawable/ic_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Group
+            app:constraint_referenced_ids="mainTvDelete, mainTvInfo"
+            android:id="@+id/mainGroup"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mainAllAppsIv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_apps_white"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/app_icon_drawable_padding"
+            android:layout_height="wrap_content"/>
+
+    <com.example.myawesomelauncher.presentation.widget.CirclePageIndicator
+            android:id="@+id/mainPageIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mainAllAppsIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:fillColor="@color/colorPrimary"
+            app:radius="@dimen/page_indicator_size"
+            android:layout_marginBottom="@dimen/app_icon_drawable_padding"
+            app:divider_width="@dimen/app_icon_drawable_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <androidx.viewpager.widget.ViewPager
+            android:layout_marginTop="40dp"
+            android:id="@+id/mainViewPager"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mainPageIndicator"
+            android:layout_height="0dp"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/mainRvAllApps"
+          android:background="@color/white"
+          android:visibility="invisible"
+          app:layout_behavior="@string/bottom_sheet_behavior"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

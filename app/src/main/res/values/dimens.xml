@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_padding">10dp</dimen>
+    <dimen name="app_icon_drawable_padding">10dp</dimen>
+    <dimen name="page_indicator_size">6dp</dimen>
+</resources>
