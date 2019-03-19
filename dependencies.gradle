@@ -37,6 +37,11 @@ ext {
   //Timber
   timberVersion = '4.6.1'
 
+
+  //Testing
+  jUnitVersion = '4.12'
+  mockitoVersion = '1.10.19'
+
   //Glide
   glideVersion = '4.8.0'
   glideKapt = '4.8.0'
@@ -78,4 +83,10 @@ ext {
        epoxy                    : "com.airbnb.android:epoxy:${epoxyVersion}",
        epoxyProcessor           : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
        ktx                      : "androidx.core:core-ktx:${ktxVersion}"]
+
+
+  // Testing dependencies
+  testDependencies =
+      [jUnit                    : "junit:junit:${jUnitVersion}",
+       mockito                  : "org.mockito:mockito-core:${mockitoVersion}"]
 }

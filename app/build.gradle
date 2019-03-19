@@ -21,6 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -38,4 +41,7 @@ dependencies {
     implementation libraryDependencies.rxJava
     implementation libraryDependencies.rxAndroid
     kapt libraryDependencies.daggerCompiler
+
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockito
 }

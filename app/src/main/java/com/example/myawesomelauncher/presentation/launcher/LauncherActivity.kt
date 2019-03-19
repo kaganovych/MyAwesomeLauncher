@@ -18,6 +18,7 @@ import com.example.myawesomelauncher.di.app.AppComponent
 import com.example.myawesomelauncher.presentation.all_apps.adapter.AllAppsAdapter
 import com.example.myawesomelauncher.presentation.all_apps.adapter.AppViewHolder
 import com.example.myawesomelauncher.presentation.all_apps.adapter.GridItemPaddingDecorator
+import com.example.myawesomelauncher.presentation.extensions.toast
 import com.example.myawesomelauncher.presentation.launcher.adapter.DesktopPagerAdapter
 import com.example.myawesomelauncher.presentation.launcher.di.DaggerLauncherActivityComponent
 import com.example.myawesomelauncher.presentation.launcher.di.LauncherActivityComponent
@@ -27,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
+
   @Inject
   lateinit var presenter: LauncherActivityContract.Presenter
 
@@ -99,6 +101,10 @@ class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
   override fun onGetAppsSuccess(list: List<AppInfoViewModel>) {
     mainRvAllApps.isVisible = true
     allAppsAdapter.swapData(list)
+  }
+
+  override fun onGetAppsFailure() {
+    toast(R.string.something_went_wrong)
   }
 
   private val allAppsListener = object : AppViewHolder.Listener {

@@ -5,6 +5,7 @@ import com.example.myawesomelauncher.presentation.model.AppInfoViewModel
 interface LauncherActivityContract {
   interface View {
     fun onGetAppsSuccess(list: List<AppInfoViewModel>)
+    fun onGetAppsFailure()
   }
 
   interface Presenter {
