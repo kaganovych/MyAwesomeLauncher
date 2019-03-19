@@ -29,7 +29,8 @@ import javax.inject.Inject
 class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
   @Inject
   lateinit var presenter: LauncherActivityContract.Presenter
-  lateinit var component: LauncherActivityComponent
+
+  private lateinit var component: LauncherActivityComponent
 
   @Inject
   lateinit var desktopPagerAdapter: DesktopPagerAdapter
@@ -214,9 +215,7 @@ class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
   override fun onBackPressed() {
     if (behavior.state == BottomSheetBehavior.STATE_EXPANDED) {
       behavior.state = BottomSheetBehavior.STATE_HIDDEN
-      return
     }
-    super.onBackPressed()
   }
 
   inner class UninstallReceiver : BroadcastReceiver() {
