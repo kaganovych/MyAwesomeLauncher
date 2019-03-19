@@ -38,5 +38,4 @@ dependencies {
     implementation libraryDependencies.rxJava
     implementation libraryDependencies.rxAndroid
     kapt libraryDependencies.daggerCompiler
-    testImplementation testDependencies.jUnit
 }

@@ -5,7 +5,7 @@ import com.example.myawesomelauncher.domain.model.AppInfo
 import com.example.myawesomelauncher.presentation.model.AppInfoViewModel
 import javax.inject.Inject
 
-class InfoViewModelMapper @Inject constructor(): Mapper<AppInfo, AppInfoViewModel>() {
+open class InfoViewModelMapper @Inject constructor(): Mapper<AppInfo, AppInfoViewModel>() {
   override fun reverse(to: AppInfoViewModel): AppInfo {
     TODO("not needed")
   }

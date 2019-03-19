@@ -1,6 +1,5 @@
 package com.example.myawesomelauncher.di.app
 
-import android.content.pm.PackageManager
 import com.example.myawesomelauncher.domain.repository.LauncherRepository
 import dagger.Component
 import javax.inject.Singleton
@@ -9,7 +8,6 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
   fun repository(): LauncherRepository
-  fun packageManager(): PackageManager
 
   companion object {
     @Volatile

@@ -74,11 +74,12 @@ class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
       )
     }
 
-    val intentFilter = IntentFilter()
-    intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED)
-    intentFilter.addAction(Intent.ACTION_PACKAGE_INSTALL)
-    intentFilter.addDataScheme("package")
-    registerReceiver(broadcastReceiver, intentFilter)
+    IntentFilter().apply {
+      addAction(Intent.ACTION_PACKAGE_ADDED)
+      addAction(Intent.ACTION_PACKAGE_INSTALL)
+      addDataScheme("package")
+      registerReceiver(broadcastReceiver, this)
+    }
 
     behavior = BottomSheetBehavior.from(mainRvAllApps)
     mainRoot.doOnLayout {
