@@ -19,7 +19,7 @@ ext {
   materialVersion = '1.0.0'
   androidSupportVersion = '1.0.0'
   lifecycleJava8Version = '2.0.0'
-  constraintVersion = '1.1.2'
+  constraintVersion = '2.0.0-alpha3'
 
   //Dagger
   daggerVersion = '2.13'
