@@ -153,9 +153,10 @@ class LauncherActivity : AppCompatActivity(), LauncherActivityContract.View {
     when (event.action) {
       DragEvent.ACTION_DRAG_STARTED -> {
         mainGroup.isVisible = true
-        mainTvDelete.text = if (dragType == DragType.DESKTOP) "Remove" else "Delete"
+        mainTvDelete.text = if (dragType == DragType.DESKTOP) getString(R.string.remove) else getString(R.string.delete)
         true
       }
+      DragEvent.ACTION_DRAG_LOCATION -> true
       DragEvent.ACTION_DROP -> {
 
         val info = event.localState as AppInfoViewModel
